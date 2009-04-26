@@ -90,7 +90,7 @@ $(document).ready(function(){
 		$.each(json, function(i){
 			tweet = chat_string_create_urls(this['text']);
 			tweetDate = get_relative_time(this['created_at']);
-			content += "<p class=\"tweets\">" + tweet + " <span class=\"date\">tweeted on " + tweetDate + "</span></p>";
+			content += "<p class=\"tweets\">" + tweet + " <span class=\"date\">tweeted " + tweetDate + "</span></p>";
 		});
 		$("#twitter div#tweets").html(content);
 	})
