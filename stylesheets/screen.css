@@ -3,6 +3,7 @@ html {
 	color: #BBB;
 	font-family: Helvetica, Arial;
 	font-size: 2em;
+	overflow-y: scroll;
 }
 a {
 	color:  #94baff;
