@@ -24,12 +24,12 @@ a:hover {
 }
 ul#nav {
 	margin: 0 auto;
-	width: 600px;
+	width: 640px;
 }
 ul#nav li {
 	float: left;
 	text-align: center;
-	width: 200px;
+	width: 160px;
 }
 ul#nav li a {
 	color: #c3c6e6;
@@ -100,4 +100,14 @@ ul#nav li a.active {
 	margin: 0 auto;
 	padding: 10px;
 	width: 800px;
+}
+.work img {
+	float: left;
+	margin-right: 10px;
+}
+.work {
+	border-bottom: 1px solid #333;
+	clear: both;
+	overflow: hidden;
+	padding: 20px 0;
 }
