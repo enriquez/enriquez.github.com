@@ -55,7 +55,7 @@ function GitHubAPI(){}
 GitHubAPI.Repos = function(username, callback){
 	requestURL = "http://github.com/api/v2/json/repos/show/" + username + "?callback=?";
 	$.getJSON(requestURL, function(json, status){
-		callback(json.repositories, status);
+		callback(json.repositories.reverse(), status);
 	});
 }
 
