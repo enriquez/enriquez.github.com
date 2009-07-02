@@ -40,9 +40,9 @@ TwitterAPI.Statuses.user_timeline = function(username, callback){
 function RSSFeed(){}
 
 // Yahoo pipe for turning an RSS XML feed into JSONP
-// http://pipes.yahoo.com/pipes/pipe.info?_id=37a11b5d21842bca434322d23b963d5e
+// http://pipes.yahoo.com/pipes/pipe.run?_id=NvfW_c9m3hGRjX4hoRWqPg
 RSSFeed.Entries = function(feed_url, callback){
-	requestURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=37a11b5d21842bca434322d23b963d5e&_render=json&_callback=?&feed=" + feed_url;
+	requestURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=NvfW_c9m3hGRjX4hoRWqPg&_render=json&_callback=?&feed=" + feed_url;
 	$.getJSON(requestURL, function(json, status){
 		callback(json.value.items, status);
 	});
