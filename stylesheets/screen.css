@@ -111,3 +111,12 @@ ul#nav li a.active {
 	overflow: hidden;
 	padding: 20px 0;
 }
+
+#google-voice {
+	display: block;
+	width: 250px;
+	height: 105px;
+	position: absolute;
+	right: 0;
+	top: 15px;
+}
