@@ -48,14 +48,14 @@ RSSFeed.Entries = function(feed_url, callback){
 	});
 }
 
-// GitHub API wrapper. http://develop.github.com/
+// GitHub API wrapper. http://developer.github.com/
 function GitHubAPI(){}
 
-// http://develop.github.com/p/repo.html
+// http://developer.github.com/v3/repos/
 GitHubAPI.Repos = function(username, callback){
-	requestURL = "http://github.com/api/v2/json/repos/show/" + username + "?callback=?";
+	requestURL = "https://api.github.com/users/" + username + "/repos?callback=?";
 	$.getJSON(requestURL, function(json, status){
-		callback(json.repositories.reverse(), status);
+		callback(json.data.reverse(), status);
 	});
 }
 
