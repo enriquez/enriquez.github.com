@@ -96,7 +96,7 @@ $(document).ready(function(){
     $("#twitter div#tweets").html(content);
   })
   
-  RSSFeed.Entries("http://feeds2.feedburner.com/theezpzway", function(json, status){
+  RSSFeed.Entries("http://feeds2.feedburner.com/MikeEnriquez", function(json, status){
     var content = "";
     $.each(json, function(i){
       publishedDate = new Date();
