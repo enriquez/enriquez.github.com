@@ -13,17 +13,6 @@ RSSFeed.Entries = function(feed_url, callback){
   });
 }
 
-// GitHub API wrapper. http://developer.github.com/
-function GitHubAPI(){}
-
-// http://developer.github.com/v3/repos/
-GitHubAPI.Repos = function(username, callback){
-  requestURL = "https://api.github.com/users/" + username + "/repos?callback=?";
-  $.getJSON(requestURL, function(json, status){
-    callback(json.data.reverse(), status);
-  });
-}
-
 $(document).ready(function(){
   $(".info").hide();
   $("ul#nav a").click(function() {
@@ -38,12 +27,9 @@ $(document).ready(function(){
       $(".info:visible").slideUp(100);
       $(this).addClass('active');
       $("#" + $(this).text().toLowerCase()).animate({opacity:1},100).slideDown(250, function() {
-        console.log($("#twitter:visible iframe").contents().find(".h-feed").height());
         $("#twitter:visible iframe").height($("#twitter:visible iframe").contents().find(".h-feed").height() + 50);
       });
     }
-
-    // $("#twitter:visible iframe").css({height: $("#twitter iframe").scrollHeight()});
 
     return false;
   });
@@ -69,18 +55,14 @@ $(document).ready(function(){
     $("#blog div#posts").html(content);
   })
 
-  GitHubAPI.Repos("enriquez", function(json, status){
+  RSSFeed.Entries("http://github.com/enriquez.atom", function(json, status){
     var content = "";
     $.each(json, function(i){
-      projectName = "<a href=\"" + this.url + "\">" + this.name + "</a>";
-      projectDescription = this.description;
-      stats = this.watchers + " watchers";
-      if (this.forks > 0){
-        stats += ", " + this.forks + " forks";
-      }
-      content += "<p class=\"project\">" + projectName + " <span class=\"date\">" + stats + "</span><br/>" + projectDescription + "</p>";
-    });
-    $("#github #projects").html(content);
-  })
+      event_type = "something";
+      event = "<div class=\"alert\"><div class=\"body\">" + this.description +"</div></div>";
+      content += event;
+    })
 
+    $("#github #events").html(content);
+  })
 });
